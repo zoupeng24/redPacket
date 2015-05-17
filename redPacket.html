@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Red Packet</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <link rel="stylesheet" href="css/redPacket.css" />
+    <link rel="stylesheet" href="css/pgwmodal.min.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sumWrapper">
+            <p>代金券</p>
+            <span>
+                <em>15</em>元
+            </span>
+        </div>
+        <input type="text" placeholder="enter your phone">
+        <input class="submitBtn" type="submit" value="Get red packet">
+        <div class="detailLinkWrapper"> 
+            <a id="detailLink" href="javascript:;">Detail&gt;</a>
+        </div>
+        <p class="servicePhone">Service phone : 123-456</p>
+    </div>
+    <div id="modalContent" style="display: none;">
+        At the Chinese New Year, a sum of money will be folded into a red packet and sent to unmarried relatives for good luck.
+    </div>
+    <script src="js/zepto.min.js"></script>
+    <script src="js/pgwmodal.min.js"></script>
+    <script type="text/javascript">
+
+        var init = function(){
+            $("#detailLink").on("click",function(){
+                var modalTitle = 'What is the red packet'
+                $.pgwModal({
+                    target: '#modalContent',
+                    title: modalTitle,
+                });
+            })
+        };
+
+        $(document).ready(function(){
+            init();
+        });
+        
+    </script>
+</body>
+</html>
